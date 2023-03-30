@@ -42,7 +42,7 @@ const navbar = () => {
             src="https://images.pexels.com/photos/7245314/pexels-photo-7245314.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
             alt=""
           />
-          <span>garg</span>
+          <span>Priyanshu Garg</span>
         </div>
       </div>
     </div>
