@@ -7,7 +7,14 @@ export const AuthContextProvider = ({ children }) => {
     JSON.parse(localStorage.getItem("user")) || null
   );
 
-  const login = () => {};
+  const login = () => {
+    setcurrentUser({
+      id: 1,
+      name: "priyanshu",
+      profilePic:
+        "https://images.pexels.com/photos/1851164/pexels-photo-1851164.jpeg?auto=compress&cs=tinysrgb&w=600",
+    });
+  };
 
   useEffect(() => {
     localStorage.setItem("user", JSON.stringify(currentUser));

@@ -10,10 +10,13 @@ import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import { useContext } from "react";
 import { DarkModeContext } from "../../context/darkModeContext";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+import { AuthContext } from "../../context/authContext";
+import zIndex from "@mui/material/styles/zIndex";
 
-const navbar = () => {
+const Navbar = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const { toggle, darkMode } = useContext(DarkModeContext);
+  const { currentUser } = useContext(AuthContext);
 
   return (
     <div className="navbar">
@@ -38,15 +41,12 @@ const navbar = () => {
         <PersonOutlineIcon />
         <NotificationsActiveIcon />
         <div className="user">
-          <img
-            src="https://images.pexels.com/photos/7245314/pexels-photo-7245314.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-            alt=""
-          />
-          <span>Priyanshu Garg</span>
+          <img src={currentUser.profilePic} alt="" />
+          <span>{currentUser.name}</span>
         </div>
       </div>
     </div>
   );
 };
 
-export default navbar;
+export default Navbar;
